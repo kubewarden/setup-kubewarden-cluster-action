@@ -50,6 +50,11 @@ runs:
         echo ${{ inputs.controller-image-tag }}
         echo ${{ inputs.controller-container-image-artifact }}
     -
+      name: "Delete previous Kubernetes cluster"
+      run: |
+        k3d cluster delete ${{ inputs.cluster-name }}
+      shell: bash
+    -
       uses: AbsaOSS/k3d-action@v1.5.0
       name: "Create Kubernetes cluster"
       with:

@@ -62,7 +62,7 @@ runs:
     -
       name: "Download Kubewarden controller container image artifact"
       if: ${{ inputs.controller-container-image-artifact != '' }}
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: ${{inputs.controller-container-image-artifact}}
         path: /tmp
@@ -75,7 +75,7 @@ runs:
     -
       name: "Download policy server container image artifact"
       if: ${{ inputs.policy-server-container-image-artifact != '' }}
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: ${{inputs.policy-server-container-image-artifact}}
         path: /tmp

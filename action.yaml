@@ -113,3 +113,9 @@ runs:
           --namespace kubewarden \
           kubewarden-controller kubewarden/kubewarden-controller
       shell: bash
+    - name: "Install Kubewarden defaults"
+      run: |
+        helm upgrade --install --wait \
+          --namespace kubewarden \
+          kubewarden-defaults kubewarden/kubewarden-defaults
+      shell: bash
